@@ -1,0 +1,29 @@
+---
+title: "Demo 1 Spotify"
+author: "Astete, Gálvez, González"
+date: "24-10-2020"
+output: html_document
+---
+
+## Introducción
+Se debe plantear un problema de investigación relacionado con las ciencias sociales y susceptible de ser abordado con las técnicas vistas en el curso. Este apartado debe contener al menos:
+
+#### Contextualización y planteamiento del problema de investigación
+
+#### Pregunta de investigación
+
+#### Hipótesis
+
+#### Fuentes de datos citada en APA
+
+## Desarrollo
+#### Producción y procesamiento de datos: 
+El grupo debe ser capaz de extraer mediante web scrapping o API sus propios datos. Se pueden utilizar datos procesados por otra persona siempre y cuando se combinen con datos propios. El procesamiento debe contener comentarios que expliciten qué se realiza en cada código.
+
+#### Visualización: 
+
+Se espera que se genere al menos una visualización que ayude a transmitir la idea central del trabajo.
+
+## Conclusiones
+
+A partir de los resultados exploratorios obtenidos en la sección anterior, se espera que el grupo realice una pequeña discusión, considerando su pregunta de investigación y sus hipótesis iniciales.
