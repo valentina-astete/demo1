@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ## Introducción
-Se debe plantear un problema de investigación relacionado con las ciencias sociales y susceptible de ser abordado con las técnicas vistas en el curso. Este apartado debe contener al menos:
+Se debe plantear un problema de investigación relacionado con las ciencias sociales y susceptible de ser abordado con las técnicas vistas en el curso. Este apartado debe contener al menos
 
 #### Contextualización y planteamiento del problema de investigación
 
