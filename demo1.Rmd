@@ -61,6 +61,7 @@ Las canciones de la lista "top 50", son las que se muestran a continuación:
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
+#lista de canciones
 list(top50_chile$nombreCancion)
 
 ```
@@ -236,12 +237,16 @@ Caballero-Meneses, J. A., & Menez, M. (2010). Influencia del tempo de la música
  Huarcaya-Victoria, J. (2020). Consideraciones sobre la salud mental en la pandemia de COVID-19. Revista Peruana de Medicina Experimental y Salud Pública, 37(2).
 
 BBC . (2020). Coronavirus en Chile: las imágenes de las protestas en Santiago por la difícil situación económica creada en Chile por la pandemia de covid-19. Londres, Gran Londres, Inglaterra.Recuperado: https://www.bbc.com/mundo/noticias-america-latina-52717413
+
 Herranz, M. (2019). Los 10 hechos que resumen el mes de la crisis social en Chile. Obtenido de emol:
 https://www.emol.com/noticias/Nacional/2019/11/18/967500/10-hechos-resumen-crisis-social.html
+
 Mira, A. (2012). Crisis de representatividad y estallido social . Polis [En línea], Publicado el 04 abril 2012, consultado el 30 Octubre 2020. URL : http://journals.openedition.org/polis/2232
 
 Aguirre, F. (2017). Usuarios chilenos de Spotify escuchan 52 millones de canciones a la semana. La Tercera. https://www.latercera.com/noticia/usuarios-chilenos-spotify-escuchan-52-millones-canciones-la-semana/
+
 Bertollini, P. Cabrera, F. & Ovalle, M. (2019). Spotify y el impacto de las plataformas de streaming musical. Medium. https://medium.com/@streamusic12/spotify-y-el-impacto-de-las-plataformas-de-streaming-musical-ccc2f8016527
+
 Spotify: Usuarios aumentan un 31% desde inicio de la pandemia. (2020). Rock&Pop. https://www.rockandpop.cl/2020/04/spotify-usuarios-aumentan-un-31-desde-inicio-de-la-pandemia/
 
 
