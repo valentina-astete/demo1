@@ -4,7 +4,10 @@ author: "Astete, Gálvez, González"
 date: "24-10-2020"
 output: html_document
 
+
 #bibliography: referencias.bib
+#csl: apa.csl
+#link-citations: yes
 
 ---
 
@@ -15,10 +18,32 @@ output: html_document
 library(summarytools)
 library(tidyverse)
 library(ggplot2)
+library(devtools)
+library(rlang)
+library(digest)
+library(glue)
+library(spotifyr)
+library(tidyverse)
+library(psych)
+
+#acceder a spotify
+#Sys.setenv(SPOTIFY_CLIENT_ID = 'd7f6fb581e2f4bd1acc1b25d36134367')
+#Sys.setenv(SPOTIFY_CLIENT_SECRET = '62579fc31dba4df3ac62ccf28ae5776f')
+#access_token <- get_spotify_access_token()
+
+##informacion de playlist, los 50 mas escuchados en chile descargado 24-10-2020 a las 23:55(aprox)
+#top50_chile <- get_playlist_audio_features("spotify", "37i9dQZEVXbL0GavIqMTeb")
+
+#seleccion de variables a utilizar
+
+#top50_chile <- top50_chile %>% select(danceability, energy, "nombreCancion" = track.album.name)
+
+#guardar base de datos
+#save(top50_chile, file = "./top50.RData")
+
+load(file = "./top50.RData")
 
 
-#base de datos
-load(file= "top50.RData")
 
 
 ```
@@ -43,45 +68,12 @@ A esta crisis política y social se suma a principios de 2020 una crisis sanitar
 Este panorama tiene impacto en la salud mental y estado de ánimo de la población “como resultado del rápido incremento de casos confirmados y muertes, la población general y el personal de salud experimentaron problemas psicológicos, como ansiedad, depresión y estrés” (Huarcaya. J, 2020). Junto a los efectos de la pandemia en la salud mental se agregan otro factores, como el descontento social, la inestabilidad económica y familiar, entre otros, los cuales vienen manifestando desde antes de la pandemia y se han visto agravados con ella.
 
 
-estadísticos descriptivos de variables
-
-```{r,  warning=FALSE, message=FALSE}
-
-summary(top50_chile$danceability)
-
-
-summary(top50_chile$energy)
-
-
-```
-
-histograma danceability
-
-```{r, warning=FALSE, message=FALSE}
-
-
-ggplot(top50_chile, aes(x=danceability)) + geom_histogram(color="red") + labs(title = "Gráfico 1. Histograma de variable danceabilty", caption = "Fuente: Elaboración propia en base a datos de Spotify")
-
-
-```
-
-
-
-histograma energy
-
-```{r, warning=FALSE, message=FALSE}
-
-ggplot(top50_chile, aes(x=energy)) + geom_histogram(color="red") + labs(title = "Gráfico 2. Histograma de variable energy", caption = "Fuente: Elaboración propia en base a datos de Spotify")
-```
-
-
-
 
 
 lista canciones del top 50
 
 
-```{r, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
 list(top50_chile$nombreCancion)
 
@@ -100,12 +92,107 @@ list(top50_chile$nombreCancion)
 
 
 
+
+
 #### Producción y procesamiento de datos: 
-El grupo debe ser capaz de extraer mediante web scrapping o API sus propios datos. Se pueden utilizar datos procesados por otra persona siempre y cuando se combinen con datos propios. El procesamiento debe contener comentarios que expliciten qué se realiza en cada código.
+
+
+
+Tabla con estadísticos descriptivos de las variables
+
+```{r, results="asis", echo=FALSE, warning=FALSE, message=FALSE}
+
+library(stargazer)
+stargazer(top50_chile)
+
+
+
+```
+
+
+
+
 
 #### Visualización: 
 
-Se espera que se genere al menos una visualización que ayude a transmitir la idea central del trabajo.
+
+
+
+
+Histograma Danceability
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+
+ggplot(top50_chile, aes(x=danceability)) + geom_histogram(color="red") + labs(title = "Gráfico 1. Histograma de variable danceabilty", caption = "Fuente: Elaboración propia en base a datos de Spotify")
+
+
+```
+
+El gráfico 1 muestra un histograma de los valores de la variable "danceability". Como fue mencionado anteriormente esta variable tiene una media de 0.746, además la variable tiene una mediana de:
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+median(top50_chile$danceability)
+```
+
+
+Siendo la media levemente menor que la mediana se puede mencionar que existe una leve tendencia de los datos hacia los mayores valores de la distribución. 
+
+Esto se puede corroborar calculando la asimetría de la distribución, la cual es:
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+skew(top50_chile$danceability)
+```
+
+Siendo esta negativa se puede corroborar que los valores tienden hacia los valores más altos de la distribución. 
+
+
+
+
+
+Histograma Energy
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+ggplot(top50_chile, aes(x=energy)) + geom_histogram(color="red") + labs(title = "Gráfico 2. Histograma de variable energy", caption = "Fuente: Elaboración propia en base a datos de Spotify")
+```
+
+
+
+
+
+
+El gráfico 2 muestra un histograma de los valores de la variable "energy".Esta variable tiene una media de 0.701, además la variable tiene una mediana de:
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+median(top50_chile$energy)
+```
+
+
+Dados estos valores, se observa entonces que la media, al igual que con la variable anterior, es levemente menor que la mediana. Dado esto se puede afirmar que también existe una leve tendencia de los datos hacia los mayores valores de la distribución. 
+
+La asimetría de la distribución es:
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+skew(top50_chile$energy)
+```
+
+Siendo esta negativa se puede corroborar que los valores tienden hacia los valores más altos de la distribución. 
+
+
+
+
+
+
+
 
 ## Conclusiones
 
