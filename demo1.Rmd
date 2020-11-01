@@ -3,12 +3,90 @@ title: "Demo 1 Spotify"
 author: "Astete, Gálvez, González"
 date: "24-10-2020"
 output: html_document
+
+#bibliography: referencias.bib
+
 ---
 
-## Introducción
-Se debe plantear un problema de investigación relacionado con las ciencias sociales y susceptible de ser abordado con las técnicas vistas en el curso. Este apartado debe contener al menos
+```{r, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
 
-#### Contextualización y planteamiento del problema de investigación
+#librerias 
+
+library(summarytools)
+library(tidyverse)
+library(ggplot2)
+
+
+#base de datos
+load(file= "top50.RData")
+
+
+```
+
+
+## Introducción
+
+### Contextualización y planteamiento del problema de investigación 
+
+Esta investigación tiene como objetivo describir las preferencias musicales de chilenos y chilenas que usan la plataforma digital de música Spotify, para ello se utilizan los datos de la lista de las 50 canciones más escuchadas en Chile en octubre del 2020 y se analizan los niveles de Danceability y Energy. 
+
+Este estudio se realiza bajo el supuesto principal de que las preferencias musicales están influidas por el contexto social que viven las personas en el país, el cual durante el último año estuvo marcado por una crisis social, política, sanitaria y económica.
+
+#### Social y Político
+
+En primer lugar, a partir del 18 de octubre del 2019 se han vivido en Chile fuertes protestas en distintos puntos del país para expresar un descontento social generalizado con la clase política y para exigir demandas en torno a derechos sociales como pensiones, salud y educación. Bajo este contexto es que se llega al plebiscito del 25 de octubre del 2020 para decidir si se hará una nueva constitución para el país. Este plebiscito figura como un hecho histórico, ya que es primera vez que se abre la posibilidad de cambiar la constitución de 1980 la cual fue redactada durante la dictadura militar.
+
+#### Sanitaria y Económica
+
+A esta crisis política y social se suma a principios de 2020 una crisis sanitaria mundial por la propagación del virus Sars-Cov-2, popularmente conocido como COVID-19 o coronavirus. Para evitar altas tasas de contagio el gobierno chileno decretó cuarentenas totales en varias ciudades limitando la libre circulación de la población, por lo que se implementa en muchas empresas una modalidad de trabajo remoto, asimismo, las instituciones educativas deciden realizar clases virtuales. Esta crisis sanitaria, catalogada como pandemia trajo varias consecuencias, dentro de las cuales está el desempleo, la precariedad laboral (Atria, Grau, Inostroza, Joignant, Madariaga & Sanhueza, 2020), el aumento de la pobreza y  manifestaciones por el hambre vivida en distintas comunas (BBC,2020). 
+
+Este panorama tiene impacto en la salud mental y estado de ánimo de la población “como resultado del rápido incremento de casos confirmados y muertes, la población general y el personal de salud experimentaron problemas psicológicos, como ansiedad, depresión y estrés” (Huarcaya. J, 2020). Junto a los efectos de la pandemia en la salud mental se agregan otro factores, como el descontento social, la inestabilidad económica y familiar, entre otros, los cuales vienen manifestando desde antes de la pandemia y se han visto agravados con ella.
+
+
+estadísticos descriptivos de variables
+
+```{r,  warning=FALSE, message=FALSE}
+
+summary(top50_chile$danceability)
+
+
+summary(top50_chile$energy)
+
+
+```
+
+histograma danceability
+
+```{r, warning=FALSE, message=FALSE}
+
+
+ggplot(top50_chile, aes(x=danceability)) + geom_histogram(color="red") + labs(title = "Gráfico 1. Histograma de variable danceabilty", caption = "Fuente: Elaboración propia en base a datos de Spotify")
+
+
+```
+
+
+
+histograma energy
+
+```{r, warning=FALSE, message=FALSE}
+
+ggplot(top50_chile, aes(x=energy)) + geom_histogram(color="red") + labs(title = "Gráfico 2. Histograma de variable energy", caption = "Fuente: Elaboración propia en base a datos de Spotify")
+```
+
+
+
+
+
+lista canciones del top 50
+
+
+```{r, warning=FALSE, message=FALSE}
+
+list(top50_chile$nombreCancion)
+
+```
+
 
 #### Pregunta de investigación
 
@@ -16,7 +94,12 @@ Se debe plantear un problema de investigación relacionado con las ciencias soci
 
 #### Fuentes de datos citada en APA
 
+
+
 ## Desarrollo
+
+
+
 #### Producción y procesamiento de datos: 
 El grupo debe ser capaz de extraer mediante web scrapping o API sus propios datos. Se pueden utilizar datos procesados por otra persona siempre y cuando se combinen con datos propios. El procesamiento debe contener comentarios que expliciten qué se realiza en cada código.
 
