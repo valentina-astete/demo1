@@ -55,7 +55,12 @@ load(file = "./top50.RData")
 
 ### Contextualización y planteamiento del problema de investigación 
 
-Esta investigación tiene como objetivo describir las preferencias musicales de chilenos y chilenas que usan la plataforma digital de música Spotify, para ello se utilizan los datos de la lista de las 50 canciones más escuchadas en Chile en octubre del 2020 y se analizan los niveles de Danceability y Energy. 
+Esta investigación describe las preferencias musicales de chilenos/as que usan la plataforma digital de música Spotify, en términos de Danceability y Energy. Para ello se utilizó la base de datos de la lista “Top 50 Chile” de las canciones más escuchadas el 24 de octubre del 2020.
+ 
+A nivel global las plataformas de música en streaming han aumentado su público auditor, Chile no es la excepción. Desde la pandemia por coronavirus Spotify aumentó en un 31% sus usuarios(Rock&Pop, 2020).  
+
+De los servicios disponibles en Chile, Spotify es el más popular. Tiene un 28% de las preferencias. En términos globales, Spotify también lidera las preferencias, con 50 millones de suscriptores contra 27 de la aplicación de Apple. Además, la aplicación en su versión gratuita se ha posicionado en el segundo lugar de las preferencias de quienes escuchan contenido online, en todos los segmentos de edad, compitiendo con las radios en línea. Esto se refleja en su reconocimiento de marca, alcanzando un 79% entre los chilenos, principalmente usuarios de entre 15 y 34 años (Aguirre, 2017; Bertollini, P. Cabrera, F. & Ovalle, M., 2019 ).
+
 
 Las canciones de la lista "top 50", son las que se muestran a continuación:
 
@@ -66,8 +71,10 @@ list(top50_chile$nombreCancion)
 
 ```
 
+#### Efectos Psicológicos de la música
+Según el campo de estudio de la influencia de la música en las personas, la música puede tanto representar las emociones de las personas como inducirlas en ellas(Gomez & Danuser, 2007; en Caballero &Menez, 2010). Y el contexto social , político y económico influye en las emociones que las personas puedan sentir(estrés, angustia , entre otras), sobretodo en las personas entre 18 y 30 años y en las mayores de 60(Huarcaya,2020). Por lo que habría una relación entre la música que se escucha y el contexto social en Chile hasta el 24 de Octubre. 
 
-Este estudio se realiza bajo el supuesto principal de que las preferencias musicales están influidas por el contexto social que viven las personas en el país, el cual durante el último año estuvo marcado por una crisis social, política, sanitaria y económica. A continuación se hará una breve descripción de los fenómenos de gran excepcionalidad que han experimentado las personas en el último tiempo:
+
 
 #### Social y Político
 
