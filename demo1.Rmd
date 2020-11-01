@@ -25,6 +25,8 @@ library(glue)
 library(spotifyr)
 library(tidyverse)
 library(psych)
+library(stargazer)
+
 
 #acceder a spotify
 #Sys.setenv(SPOTIFY_CLIENT_ID = 'd7f6fb581e2f4bd1acc1b25d36134367')
@@ -55,7 +57,16 @@ load(file = "./top50.RData")
 
 Esta investigación tiene como objetivo describir las preferencias musicales de chilenos y chilenas que usan la plataforma digital de música Spotify, para ello se utilizan los datos de la lista de las 50 canciones más escuchadas en Chile en octubre del 2020 y se analizan los niveles de Danceability y Energy. 
 
-Este estudio se realiza bajo el supuesto principal de que las preferencias musicales están influidas por el contexto social que viven las personas en el país, el cual durante el último año estuvo marcado por una crisis social, política, sanitaria y económica.
+Las canciones de la lista "top 50", son las que se muestran a continuación:
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+list(top50_chile$nombreCancion)
+
+```
+
+
+Este estudio se realiza bajo el supuesto principal de que las preferencias musicales están influidas por el contexto social que viven las personas en el país, el cual durante el último año estuvo marcado por una crisis social, política, sanitaria y económica. A continuación se hará una breve descripción de los fenómenos de gran excepcionalidad que han experimentado las personas en el último tiempo:
 
 #### Social y Político
 
@@ -70,59 +81,63 @@ Este panorama tiene impacto en la salud mental y estado de ánimo de la poblaci�
 
 
 
-lista canciones del top 50
+
+## Pregunta de investigación 
+Bajo este escenario nacional se busca conocer ¿Cómo son las preferencias musicales de los/as chilenos/as en Spotify en octubre del año 2020?
 
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
-list(top50_chile$nombreCancion)
-
-```
 
 
-#### Pregunta de investigación
+## Metodología
 
-#### Hipótesis
+Los datos fueron obtenidos el 24 de Octubre a través de una Interfaz de programación de aplicaciones (API, por sus siglas en inglés) desde la plataforma de Spotify para desarrolladores. Se procesó una base con los nombres de las 50 canciones más escuchadas y sus niveles de danceability y energy.
 
-#### Fuentes de datos citada en APA
+En primer lugar, Danceability es una variable que mide la capacidad de baile de una canción y describe qué tan adecuada es una pista para bailar en función de una combinación de elementos musicales que incluyen el tempo, la estabilidad del ritmo, la fuerza del ritmo y la regularidad general. Un valor de 0.0 es menos bailable y 1.0 es más bailable. 
+
+En segundo lugar, Energy, variable que toma valores entre 0.0 y 1.0 y representa una medida perceptiva de intensidad y actividad. Por lo general, las pistas enérgicas se sienten rápidas, ruidosas y ruidosas. Las características de percepción que contribuyen a este atributo incluyen rango dinámico, volumen percibido, timbre, frecuencia de inicio y entropía general. 
+
+
+
 
 
 
 ## Desarrollo
 
 
+En este apartado se presentará el procesamiento de los datos recabados 
+
+
+### Tabla de estadísticos descriptivos 
 
 
 
-#### Producción y procesamiento de datos: 
-
-
-
-Tabla con estadísticos descriptivos de las variables
 
 ```{r, results="asis", echo=FALSE, warning=FALSE, message=FALSE}
 
-library(stargazer)
-stargazer(top50_chile)
+#tabla de estadísticos descriptivos
+stargazer(top50_chile, type = "text")
 
 
 
 ```
 
+En mínimo y máximo  de “danceability” son de 0,483 y 0,905 en una escala que va desde 0,0 a 1,0. El percentil 25 es de 0,695 lo que quiere decir que el 25% de los 50 datos tienen valores desde 0,483 hasta 0,695 estando en 75% restante sobre este número. Se puede decir que el 75% de los datos poseen un grado alto de “danceability” ya que se encuentran sobre el 0,5  (la mitad de la escala en la que se mide esta variable). Solo un 25 % de los datos se encuentran sobre el 0,812 de “danceability”.
+En cuanto al promedio y la desviación estándar, el primero corresponde a 0,746 y la segunda a 0,091. El promedio al ser una medida de tendencia central busca ser representativa de la muestra. La desviación estándar muestra que tan dispersos están los datos de la media, en este caso al ser pequeña se puede decir que los datos son poco dispersos y que el promedio se puede considerar significativo.
+
+En cuanto a “energy” los valores de los 50 datos van desde 0,457 a 0,891, en una escala de 0,0 a 1,0. Se puede decir que el 25 % de los datos tienen valores desde 0,457 a 0,633, por lo que un 75% de los datos esta sobre este numero. Se puede decir que las canciones tienen un alto nivel de “energy” ya que la mayoría se encuentra sobre el 0,5(se encuentran sobre la mitad de la escala de medición de la variable). Solo un 25% de los datos tienen un valor sobre 0,774. 
+En cuanto al promedio es de 0,701 y la desviación estándar es de 0,107. La desviación estándar es pequeña, por lo que se puede decir que los datos no están muy dispersos,  lo que permitiría decir que el promedio es significativo.
 
 
 
 
-#### Visualización: 
+### Gráficos: 
 
 
 
-
-
-Histograma Danceability
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
+#ploteo de histograma de variable danceability
 
 ggplot(top50_chile, aes(x=danceability)) + geom_histogram(color="red") + labs(title = "Gráfico 1. Histograma de variable danceabilty", caption = "Fuente: Elaboración propia en base a datos de Spotify")
 
@@ -134,31 +149,36 @@ El gráfico 1 muestra un histograma de los valores de la variable "danceability"
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
+#medina de danceability
 median(top50_chile$danceability)
+
 ```
 
 
 Siendo la media levemente menor que la mediana se puede mencionar que existe una leve tendencia de los datos hacia los mayores valores de la distribución. 
 
-Esto se puede corroborar calculando la asimetría de la distribución, la cual es:
+Esto se puede corroborar calculando la simetría de la distribución, la cual es:
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
+#simetría de variable danceability
 skew(top50_chile$danceability)
+
 ```
 
-Siendo esta negativa se puede corroborar que los valores tienden hacia los valores más altos de la distribución. 
+Siendo esta negativa se puede corroborar que los valores de la variable danceability tienden hacia los valores más altos de la distribución. 
 
 
 
 
 
-Histograma Energy
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
+#ploteo de histograma de variable energy
 ggplot(top50_chile, aes(x=energy)) + geom_histogram(color="red") + labs(title = "Gráfico 2. Histograma de variable energy", caption = "Fuente: Elaboración propia en base a datos de Spotify")
+
 ```
 
 
@@ -170,22 +190,22 @@ El gráfico 2 muestra un histograma de los valores de la variable "energy".Esta 
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
+#mediana de variable energy
 median(top50_chile$energy)
 ```
 
 
 Dados estos valores, se observa entonces que la media, al igual que con la variable anterior, es levemente menor que la mediana. Dado esto se puede afirmar que también existe una leve tendencia de los datos hacia los mayores valores de la distribución. 
 
-La asimetría de la distribución es:
+La simetría de la distribución es:
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-
+#simetría de variable energy
 skew(top50_chile$energy)
 ```
 
-Siendo esta negativa se puede corroborar que los valores tienden hacia los valores más altos de la distribución. 
+Siendo esta negativa se puede corroborar que los valores de la variable energy tienden hacia los valores más altos de la distribución. 
 
 
 
@@ -196,4 +216,32 @@ Siendo esta negativa se puede corroborar que los valores tienden hacia los valor
 
 ## Conclusiones
 
-A partir de los resultados exploratorios obtenidos en la sección anterior, se espera que el grupo realice una pequeña discusión, considerando su pregunta de investigación y sus hipótesis iniciales.
+
+Dado el análisis realizado a los datos obtenidos a partir de la lista de las 50 canciones más escuchadas en Chile de Spotify, es posible plantear que las canciones más escuchadas tienden a tener altos valores en los indicadores de energy y danceability. Por lo que se puede decir  que las canciones más consumidas o escuchadas por chilenos el 24 de Octubre, tienden a ser música que es bailable, estimulante y energizante. 
+
+En ese sentido, es posible aventurar como hipótesis una relación entre el presente momento de excepcionalidad, debido a los factores mencionados en la introducción (crisis social y política, pandemia global, dominación del mundo), y el consumo de música estimulante por parte de los chilenos, pudiendo ser este consumo un reflejo de una búsqueda de ciertos estados de ánimo o el reflejo de una emocionalidad específica , debido a que era un día antes del plebiscito por la nueva constitución. 
+
+Para una futura investigación que pretenda seguir la idea planteada, es necesario mencionar  que para poder sacar conclusiones societales a partir de los usuarios de Spotify. Se necesitaría una caracterización exhaustiva de estos grupos, para poder extrapolar conclusiones al resto de la población. 
+
+
+
+
+
+## Bibliografia
+
+
+Atria. J, Grau.N, Inostroza.V, Joignant.A, Madariaga.A & Sanhueza.C. (2020). La política económica frente al COVID-19 en Chile y el mundo: una invitación a ampliar las fronteras de lo posible. Santiago, Region Metropoitana, Chile.Recuperado: https://ciperchile.cl/2020/05/24/la-politica-economica-frente-al-covid-19-en-chile-y-el-mundo-una-invitacion-a-ampliar-las-fronteras-de-lo-posible/
+
+Caballero-Meneses, J. A., & Menez, M. (2010). Influencia del tempo de la música en las emociones. Revista colombiana de psicología, 19(1), 37-44.
+ Huarcaya-Victoria, J. (2020). Consideraciones sobre la salud mental en la pandemia de COVID-19. Revista Peruana de Medicina Experimental y Salud Pública, 37(2).
+
+BBC . (2020). Coronavirus en Chile: las imágenes de las protestas en Santiago por la difícil situación económica creada en Chile por la pandemia de covid-19. Londres, Gran Londres, Inglaterra.Recuperado: https://www.bbc.com/mundo/noticias-america-latina-52717413
+Herranz, M. (2019). Los 10 hechos que resumen el mes de la crisis social en Chile. Obtenido de emol:
+https://www.emol.com/noticias/Nacional/2019/11/18/967500/10-hechos-resumen-crisis-social.html
+Mira, A. (2012). Crisis de representatividad y estallido social . Polis [En línea], Publicado el 04 abril 2012, consultado el 30 Octubre 2020. URL : http://journals.openedition.org/polis/2232
+
+Aguirre, F. (2017). Usuarios chilenos de Spotify escuchan 52 millones de canciones a la semana. La Tercera. https://www.latercera.com/noticia/usuarios-chilenos-spotify-escuchan-52-millones-canciones-la-semana/
+Bertollini, P. Cabrera, F. & Ovalle, M. (2019). Spotify y el impacto de las plataformas de streaming musical. Medium. https://medium.com/@streamusic12/spotify-y-el-impacto-de-las-plataformas-de-streaming-musical-ccc2f8016527
+Spotify: Usuarios aumentan un 31% desde inicio de la pandemia. (2020). Rock&Pop. https://www.rockandpop.cl/2020/04/spotify-usuarios-aumentan-un-31-desde-inicio-de-la-pandemia/
+
+
