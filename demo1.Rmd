@@ -76,22 +76,21 @@ Según el campo de estudio de la influencia de la música en las personas, la m�
 
 
 
-#### Social y Político
+#### Crisis Social y Política
 
-En primer lugar, a partir del 18 de octubre del 2019 se han vivido en Chile fuertes protestas en distintos puntos del país para expresar un descontento social generalizado con la clase política y para exigir demandas en torno a derechos sociales como pensiones, salud y educación. Bajo este contexto es que se llega al plebiscito del 25 de octubre del 2020 para decidir si se hará una nueva constitución para el país. Este plebiscito figura como un hecho histórico, ya que es primera vez que se abre la posibilidad de cambiar la constitución de 1980 la cual fue redactada durante la dictadura militar.
+En primer lugar, a partir del 18 de octubre del 2019 se han vivido en Chile fuertes protestas en distintos puntos del país para expresar un descontento social generalizado con la clase política y para exigir demandas en torno a derechos sociales como pensiones, salud y educación(Herranz, 2019; Mira, 2012 ). Bajo este contexto es que se llega al plebiscito del 25 de octubre del 2020 para decidir si se hará una nueva constitución para el país. Este plebiscito figura como un hecho histórico, ya que es primera vez que se abre la posibilidad de cambiar la constitución de 1980 la cual fue redactada durante la dictadura militar.
 
 #### Sanitaria y Económica
 
-A esta crisis política y social se suma a principios de 2020 una crisis sanitaria mundial por la propagación del virus Sars-Cov-2, popularmente conocido como COVID-19 o coronavirus. Para evitar altas tasas de contagio el gobierno chileno decretó cuarentenas totales en varias ciudades limitando la libre circulación de la población, por lo que se implementa en muchas empresas una modalidad de trabajo remoto, asimismo, las instituciones educativas deciden realizar clases virtuales. Esta crisis sanitaria, catalogada como pandemia trajo varias consecuencias, dentro de las cuales está el desempleo, la precariedad laboral (Atria, Grau, Inostroza, Joignant, Madariaga & Sanhueza, 2020), el aumento de la pobreza y  manifestaciones por el hambre vivida en distintas comunas (BBC,2020). 
+A esta crisis política y social se suma a principios de 2020 una crisis sanitaria mundial por la propagación del virus Sars-Cov-2, popularmente conocido como COVID-19 o coronavirus. Esta crisis sanitaria, catalogada como pandemia trajo varias consecuencias, dentro de las cuales está el desempleo, la precariedad laboral (Atria, Grau, Inostroza, Joignant, Madariaga & Sanhueza, 2020), el aumento de la pobreza y  manifestaciones por el hambre vivida en distintas comunas (BBC,2020). 
 
-Este panorama tiene impacto en la salud mental y estado de ánimo de la población “como resultado del rápido incremento de casos confirmados y muertes, la población general y el personal de salud experimentaron problemas psicológicos, como ansiedad, depresión y estrés” (Huarcaya. J, 2020). Junto a los efectos de la pandemia en la salud mental se agregan otro factores, como el descontento social, la inestabilidad económica y familiar, entre otros, los cuales vienen manifestando desde antes de la pandemia y se han visto agravados con ella.
 
 
 
 
 
 ## Pregunta de investigación 
-Bajo este escenario nacional se busca conocer ¿Cómo son las preferencias musicales de los/as chilenos/as en Spotify en octubre del año 2020?
+Bajo este escenario nacional se busca conocer ¿Cómo son las preferencias musicales de los/as chilenos/as en Spotify el 24 de  Octubre del año 2020?
 
 
 
@@ -237,22 +236,21 @@ Para una futura investigación que pretenda seguir la idea planteada, es necesar
 
 ## Bibliografia
 
+Aguirre, F. (2017). Usuarios chilenos de Spotify escuchan 52 millones de canciones a la semana. La Tercera. https://www.latercera.com/noticia/usuarios-chilenos-spotify-escuchan-52-millones-canciones-la-semana/
 
 Atria. J, Grau.N, Inostroza.V, Joignant.A, Madariaga.A & Sanhueza.C. (2020). La política económica frente al COVID-19 en Chile y el mundo: una invitación a ampliar las fronteras de lo posible. Santiago, Region Metropoitana, Chile.Recuperado: https://ciperchile.cl/2020/05/24/la-politica-economica-frente-al-covid-19-en-chile-y-el-mundo-una-invitacion-a-ampliar-las-fronteras-de-lo-posible/
 
+BBC . (2020). Coronavirus en Chile: las imágenes de las protestas en Santiago por la difícil situación económica creada en Chile por la pandemia de covid-19. Londres, Gran Londres, Inglaterra.Recuperado: https://www.bbc.com/mundo/noticias-america-latina-52717413
+
+Bertollini, P. Cabrera, F. & Ovalle, M. (2019). Spotify y el impacto de las plataformas de streaming musical. Medium. https://medium.com/@streamusic12/spotify-y-el-impacto-de-las-plataformas-de-streaming-musical-ccc2f8016527
+
 Caballero-Meneses, J. A., & Menez, M. (2010). Influencia del tempo de la música en las emociones. Revista colombiana de psicología, 19(1), 37-44.
  Huarcaya-Victoria, J. (2020). Consideraciones sobre la salud mental en la pandemia de COVID-19. Revista Peruana de Medicina Experimental y Salud Pública, 37(2).
-
-BBC . (2020). Coronavirus en Chile: las imágenes de las protestas en Santiago por la difícil situación económica creada en Chile por la pandemia de covid-19. Londres, Gran Londres, Inglaterra.Recuperado: https://www.bbc.com/mundo/noticias-america-latina-52717413
 
 Herranz, M. (2019). Los 10 hechos que resumen el mes de la crisis social en Chile. Obtenido de emol:
 https://www.emol.com/noticias/Nacional/2019/11/18/967500/10-hechos-resumen-crisis-social.html
 
 Mira, A. (2012). Crisis de representatividad y estallido social . Polis [En línea], Publicado el 04 abril 2012, consultado el 30 Octubre 2020. URL : http://journals.openedition.org/polis/2232
-
-Aguirre, F. (2017). Usuarios chilenos de Spotify escuchan 52 millones de canciones a la semana. La Tercera. https://www.latercera.com/noticia/usuarios-chilenos-spotify-escuchan-52-millones-canciones-la-semana/
-
-Bertollini, P. Cabrera, F. & Ovalle, M. (2019). Spotify y el impacto de las plataformas de streaming musical. Medium. https://medium.com/@streamusic12/spotify-y-el-impacto-de-las-plataformas-de-streaming-musical-ccc2f8016527
 
 Spotify: Usuarios aumentan un 31% desde inicio de la pandemia. (2020). Rock&Pop. https://www.rockandpop.cl/2020/04/spotify-usuarios-aumentan-un-31-desde-inicio-de-la-pandemia/
 
