@@ -120,16 +120,48 @@ En este apartado se presentará el procesamiento de los datos recabados
 
 
 ```{r, results="asis", echo=FALSE, warning=FALSE, message=FALSE}
+##Se sacan los estadisticos básicos de daceability
 
-#tabla de estadísticos descriptivos
-stargazer(top50_chile, type = "text")
+min <- min(top50_chile$danceability, na.rm = TRUE)
+q1 <- quantile(top50_chile$danceability, probs = 0.25, na.rm = TRUE)
+media <- mean.default(top50_chile$danceability, na.rm = TRUE)
+desvest <- sd(top50_chile$danceability, na.rm = TRUE)
+q3 <- quantile(top50_chile$danceability, probs = 0.75, na.rm = TRUE)
+max <- max(top50_chile$danceability, na.rm = TRUE)
+##Se convierten en vector
+descriptivos_danceability <- as.numeric(c(min, q1, media,
+                          desvest, q3, max))
+##se sacan los estadisticos basicos de energy
 
+min <- min(top50_chile$energy, na.rm = TRUE)
+q1 <- quantile(top50_chile$energy, probs = 0.25, na.rm = TRUE)
+media <- mean.default(top50_chile$energy, na.rm = TRUE)
+desvest <- sd(top50_chile$energy, na.rm = TRUE)
+q3 <- quantile(top50_chile$energy, probs = 0.75, na.rm = TRUE)
+max <- max(top50_chile$energy, na.rm = TRUE)
 
+##Se convierten en vector
+
+descriptivos_energy <- as.numeric(c(min, q1, media,
+                          desvest, q3, max))
+##se hace vector de los nombre
+nombres <- c("Mínimo", "Q1", "Media",
+             "Desviación Estándar", "Q3", "Máximo")
+
+##Se hace la tabla
+
+descr2 <- as.data.frame(rbind(nombres,descriptivos_danceability,descriptivos_energy))
+
+##Se exporta a matriz de calcúlo
+write.csv2(descr2, file = "Tabla 5.csv")
+##visualización
+
+knitr::kable(descr2)
 
 ```
 
-En mínimo y máximo  de “danceability” son de 0,483 y 0,905 en una escala que va desde 0,0 a 1,0. El percentil 25 es de 0,695 lo que quiere decir que el 25% de los 50 datos tienen valores desde 0,483 hasta 0,695 estando en 75% restante sobre este número. Se puede decir que el 75% de los datos poseen un grado alto de “danceability” ya que se encuentran sobre el 0,5  (la mitad de la escala en la que se mide esta variable). Solo un 25 % de los datos se encuentran sobre el 0,812 de “danceability”.
-En cuanto al promedio y la desviación estándar, el primero corresponde a 0,746 y la segunda a 0,091. El promedio al ser una medida de tendencia central busca ser representativa de la muestra. La desviación estándar muestra que tan dispersos están los datos de la media, en este caso al ser pequeña se puede decir que los datos son poco dispersos y que el promedio se puede considerar significativo.
+En mínimo y máximo  de “danceability” son de 0,483 y 0,905 en una escala que va desde 0,0 a 1,0. El primer cuartil es de 0,699 lo que quiere decir que el 25% de los 50 datos tienen valores desde 0,483 hasta 0,699 estando en 75% restante sobre este número. Se puede decir que el 75% de los datos poseen un grado alto de “danceability” ya que se encuentran sobre 0,5  (la mitad de la escala en la que se mide esta variable). Solo un 25 % de los datos se encuentran sobre el 0,812 de “danceability”.
+En cuanto al promedio y la desviación estándar, el primero corresponde a 0,747 y la segunda a 0,092. El promedio al ser una medida de tendencia central busca ser representativa de la muestra. La desviación estándar muestra que tan dispersos están los datos de la media, en este caso al ser pequeña se puede decir que los datos son poco dispersos y que el promedio se puede considerar significativo.
 
 En cuanto a “energy” los valores de los 50 datos van desde 0,457 a 0,891, en una escala de 0,0 a 1,0. Se puede decir que el 25 % de los datos tienen valores desde 0,457 a 0,633, por lo que un 75% de los datos esta sobre este numero. Se puede decir que las canciones tienen un alto nivel de “energy” ya que la mayoría se encuentra sobre el 0,5(se encuentran sobre la mitad de la escala de medición de la variable). Solo un 25% de los datos tienen un valor sobre 0,774. 
 En cuanto al promedio es de 0,701 y la desviación estándar es de 0,107. La desviación estándar es pequeña, por lo que se puede decir que los datos no están muy dispersos,  lo que permitiría decir que el promedio es significativo.
